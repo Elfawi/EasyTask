@@ -1,0 +1,22 @@
+@if(isFormVisible){
+<app-add-task-form [userId]="userId" (close)="onCloseAddTask()" />
+} @if(isEditFormVisible){
+<edit-add-task-form (close)="onCloseEditTask()" />
+}
+<section id="tasks">
+  <header>
+    <h2>{{ name }}'s Tasks</h2>
+    <menu>
+      <button (click)="onOpenAddTask()">
+        @if(isFormVisible){hide}@else {Add Task}
+      </button>
+    </menu>
+  </header>
+  <ul>
+    @for(task of selectedUserTasks; track task.id){
+    <li>
+      <app-task [task]="task" (open)="onEditTask()" />
+    </li>
+    }
+  </ul>
+</section>
