@@ -5,6 +5,8 @@ import { TasksService } from './tasks.service';
 import { EditTaskFormComponent } from './edit-task-form/edit-task-form.component';
 @Component({
   selector: 'app-tasks',
+  standalone: true,
+  imports: [TaskComponent, AddTaskFormComponent, EditTaskFormComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
 })

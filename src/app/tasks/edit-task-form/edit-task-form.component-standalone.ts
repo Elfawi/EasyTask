@@ -1,7 +1,10 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TasksService } from '../tasks.service';
 @Component({
   selector: 'edit-add-task-form',
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './edit-task-form.component.html',
   styleUrl: './edit-task-form.component.css',
 })
